@@ -1,265 +1,271 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECON 511 | Study Guide</title>
-    <meta name="description" content="A complete study guide for ECON 511: Economic Analysis for Business Decisions.">
+/* --- Global Setup & Variables --- */
+:root {
+    --primary-color: #3457D5; /* Professional Blue */
+    --primary-light: #eef2ff; /* Light Indigo/Blue */
+    --bg-light: #f8f9fa; /* Light gray page background */
+    --bg-white: #ffffff;
+    --text-dark: #212529;
+    --text-light: #495057;
+    --border-color: #dee2e6;
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
+    --success-light: #f0fdf4;
+    --success-dark: #15803d;
+    --danger-light: #fef2f2;
+    --danger-dark: #b91c1c;
+    --warning-light: #fffbeb;
+    --warning-dark: #b45309;
+    --info-light: #eff6ff;
+    --info-dark: #1d4ed8;
 
-    <div class="container">
-        <header class="main-header">
-            <h1>Economics Study Guide</h1>
-            <p>ECON 511: Economic Analysis for Business Decisions</p>
-        </header>
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+    --shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
 
-        <main class="study-guide">
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-            <div class="accordion-item">
-                <button class="accordion-header active">
-                    <span>Course Overview & Synopsis</span>
-                    <span class="icon"></span>
-                </button>
-                <div class="accordion-content active">
-                    <h3>Course Synopsis</h3>
-                    <p>This course bridges key concepts of microeconomics with applications in technology, AI, digitization, and computer science. Using real-world case studies, students will explore economic principles and analyze their role in shaping technology-driven decisions and innovation. The course emphasizes practical application and strategic thinking.</p>
-                    <p>The course covers the principles of economics as a theory of rational choice and the operation of a market economy. Students study consumer choice (utility maximization), the behavior of firms (costs and optimal production), and the supply-demand model under perfect competition. The latter part focuses on more realistic market structures (monopolies, oligopolies) and organizational architecture, including principal-agent problems.</p>
-                </div>
-            </div>
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>Course Learning Outcomes (CLOs 1-4)</span>
-                    <span class="icon"></span>
-                </button>
-                <div class="accordion-content">
-                    <h3>Course Learning Outcomes (CLOs)</h3>
-                    <dl>
-                        <dt>CLO 1</dt>
-                        <dd>Demonstrate comprehension of economic principles and theories relevant to managerial decision-making within various business ecosystems.</dd>
-                        
-                        <dt>CLO 2</dt>
-                        <dd>Apply decision analytics techniques and quantitative methods to analyze economic data sets, enabling strategic decision-making in managerial contexts.</dd>
-                        
-                        <dt>CLO 3</dt>
-                        <dd>Evaluate the impact of global factors on business operations, demonstrating cross-cultural comprehension and adaptability in decision-making.</dd>
-                        
-                        <dt>CLO 4</dt>
-                        <dd>Assess ethical considerations in managerial economics, seeking solutions to ethical challenges and demonstrating social accountability in decision-making processes.</dd>
-                    </dl>
-                </div>
-            </div>
+/* --- Layout --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>Key Topics Overview (Sessions 1-4)</span>
-                    <span class="icon"></span>
-                </button>
-                <div class="accordion-content">
-                    <h4>Session 1: Introduction to Economics and Technology</h4>
-                    <ul>
-                        <li>Basic economic principles and their relevance to technology.</li>
-                        <li>Opportunity cost and trade-offs in tech development.</li>
-                        <li>The role of scarcity in innovation.</li>
-                    </ul>
+.main-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+}
 
-                    <h4>Session 2: Demand, Supply in the Digital Era</h4>
-                    <ul>
-                        <li>Demand and supply analysis for digital products.</li>
-                        <li>Determinants of Demand and Supply for digital products.</li>
-                        <li>Role of Market Price in dealing with surplus or shortage.</li>
-                        <li>Effect of Government Policies.</li>
-                    </ul>
+.main-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    color: var(--text-dark);
+}
 
-                    <h4>Session 3: Hurricane Sandy (Case Study)</h4>
-                    <p>This session is a case study discussion, likely applying the concepts from Session 2 to analyze market responses, price controls, and resource allocation during a crisis.</p>
+.main-header p {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
 
-                    <h4>Session 4: Costs of Businesses and Production</h4>
-                    <ul>
-                        <li>Implicit VS Explicit Cost.</li>
-                        <li>Fixed, Variable, Marginal and Total Costs.</li>
-                        <li>Economies and Diseconomies of Scale.</li>
-                        <li>Marginal Product of Labor & Capital.</li>
-                    </ul>
-                </div>
-            </div>
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>4. Market Equilibrium & Supply-Demand Analysis</span>
-                    <span class="icon"></span>
-                </button>
-                <div class="accordion-content">
-                    <h3>Market Equilibrium Concept</h3>
-                    <p><strong>Definition:</strong> Market equilibrium occurs when quantity demanded (Q<sub>d</sub>) equals quantity supplied (Q<sub>s</sub>) at a particular price. At this point (P*, Q*), the market is "cleared."</p>
-                    <div class="callout callout-info">
-                        <strong>Key Formula:</strong> Q<sub>d</sub> = Q<sub>s</sub>
-                    </div>
-                    
-                    <h4>Supply and Demand Graph</h4>
-                    <div class="chart-container">
-                        <canvas id="supplyDemandChart"></canvas>
-                    </div>
-                    <p class="chart-caption">Equilibrium is at the intersection (Price = 30, Quantity = 60).</p>
+/* --- Accordion --- */
+.accordion-item {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+    overflow: hidden; /* For border-radius */
+    transition: box-shadow 0.3s ease;
+}
 
-                    <h4>Shifts in Supply (e.g., Subsidy)</h4>
-                    <div class="chart-container">
-                        <canvas id="supplyShiftChart"></canvas>
-                    </div>
-                    <p class="chart-caption">A government subsidy lowers costs, shifting supply right (S1 to S2), resulting in a lower price and higher quantity.</p>
+.accordion-item:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
 
-                    <div class="callout callout-warning">
-                        <strong>Real-World Applications (Pakistan Context):</strong>
-                        <ul>
-                            <li><strong>Q1:</strong> Rising electricity prices → Production costs up → Supply shifts left → Higher prices for goods.</li>
-                            <li><strong>Q2:</strong> Fertilizer subsidies → Production costs down → Supply shifts right → Lower prices for produce.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+.accordion-header {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    border: none;
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>5. Production Theory: MP, AP, and Relationships</span>
-                    <span class="icon"></span>
-                </button>
-                <div class="accordion-content">
-                    <h3>Key Production Concepts</h3>
-                    <p>Understanding the relationship between inputs (like labor) and outputs (total product).</p>
-                    <ul>
-                        <li><strong>Total Product (TP):</strong> Total output produced.</li>
-                        <li><strong>Marginal Product (MP):</strong> The additional output from one more unit of labor. (ΔTP / ΔL)</li>
-                        <li><strong>Average Product (AP):</strong> The output per unit of labor. (TP / L)</li>
-                    </ul>
+.accordion-header:hover {
+    background-color: #2c48b0;
+}
 
-                    <h4>Marginal and Average Product Curves</h4>
-                    <div class="chart-container">
-                        <canvas id="productionChart"></canvas>
-                    </div>
+.accordion-header .icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.3s ease-out;
+}
 
-                    <div class="callout callout-success">
-                        <strong>Key Relationships & Rules:</strong>
-                        <ul>
-                            <li><strong>Q5:</strong> When MP > AP, the AP curve is rising.</li>
-                            <li><strong>Q7:</strong> When AP is at its maximum, MP = AP (the curves intersect).</li>
-                            <li>When MP < AP, the AP curve is falling.</li>
-                            <li><strong>Q12:</strong> The "Law of Diminishing Marginal Returns" begins when the MP curve starts to decline (after Labor = 3 in this graph).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>6. Cost Curves and Their Relationships</span>
-                    <span class="icon"></span>
-                </button>
-                <div class="accordion-content">
-                    <h3>Average and Marginal Cost Curves</h3>
-                    <p>These curves show the cost per unit of output. They are a mirror image of the production curves.</p>
-                    <ul>
-                        <li><strong>Marginal Cost (MC):</strong> Cost of producing one more unit. (ΔTC / ΔQ)</li>
-                        <li><strong>Average Variable Cost (AVC):</strong> Variable cost per unit. (TVC / Q)</li>
-                        <li><strong>Average Total Cost (ATC):</strong> Total cost per unit. (TC / Q)</li>
-                        <li><strong>Average Fixed Cost (AFC):</strong> Fixed cost per unit. (TFC / Q)</li>
-                    </ul>
+.accordion-header .icon::before,
+.accordion-header .icon::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-                    <div class="chart-container">
-                        <canvas id="costChart"></canvas>
-                    </div>
+.accordion-header .icon::before {
+    width: 10px;
+    height: 2px;
+}
 
-                    <div class="callout callout-danger">
-                        <strong>Critical Relationships:</strong>
-                        <ul>
-                            <li><strong>Q6:</strong> MC and MP are inversely related. When MP rises, MC falls. When MP falls (diminishing returns), MC rises.</li>
-                            <li><strong>Q8 & Q13:</strong> When MC is below AVC, it pulls the average down (AVC is falling).</li>
-                            <li><strong>Q14:</strong> The MC curve intersects the AVC and ATC curves at their absolute minimum points.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+.accordion-header .icon::after {
+    width: 2px;
+    height: 10px;
+}
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>7. Economies and Diseconomies of Scale</span>
-                    <span class="icon"></span>
-                </button>
-                <div class="accordion-content">
-                    <h3>Long-Run Average Cost (LRAC) Curve</h3>
-                    <p>In the long run, all costs are variable (e.g., a firm can build a bigger factory). The LRAC curve shows the lowest possible average cost for any given level of output.</p>
-                    
-                    <div class="chart-container">
-                        <canvas id="lracChart"></canvas>
-                    </div>
+/* Rotate the icon for the "active" state */
+.accordion-header.active .icon {
+    transform: rotate(135deg);
+}
 
-                    <div class="grid-container">
-                        <div class="callout callout-success">
-                            <strong>Q15: Economies of Scale (LRAC Falling)</strong>
-                            <p>Bigger is cheaper. Doubling inputs more than doubles output.</p>
-                            <ul>
-                                <li>Labor Specialization</li>
-                                <li>Efficient Capital</li>
-                                <li>Bulk Buying</li>
-                            </ul>
-                        </div>
-                        <div class="callout callout-danger">
-                            <strong>Q16: Diseconomies of Scale (LRAC Rising)</strong>
-                            <p>Bigger is more expensive. The firm becomes too large to manage.</p>
-                            <ul>
-                                <li>Control & Coordination Problems</li>
-                                <li>Communication Issues</li>
-                                <li>Bureaucracy</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+.accordion-content {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--border-color);
+    display: none; /* Hidden by default */
+}
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>8. Perfect Competition</span>
-                    <span class="icon"></span>
-                </button>
-                <div class="accordion-content">
-                    <h3>Characteristics</h3>
-                    <p>A "price taker" market model with many firms, identical products, and easy entry/exit.</p>
-                    <ul>
-                        <li><strong>Q27:</strong> The firm's demand curve is perfectly elastic (horizontal) because it must accept the market price. The *industry* demand curve is still downward-sloping.</li>
-                        <li><strong>Q29:</strong> Firms can't advertise; the product is standardized, so there's nothing to differentiate.</li>
-                    </ul>
+/* Show content when active */
+.accordion-header.active + .accordion-content,
+.accordion-content.active {
+    display: block;
+}
 
-                    <h4>Profit Maximization (TR/TC Approach)</h4>
-                    <p>Firms maximize profit at the output level where Total Revenue (TR) exceeds Total Cost (TC) by the largest amount.</p>
-                    <div class="chart-container">
-                        <canvas id="profitChart"></canvas>
-                    </div>
-                    <p class="chart-caption">Profit is maximized at Output = 9, where the gap between TR and TC is largest (as shown by the profit bars).</p>
 
-                    <div class="grid-container">
-                        <div class="callout callout-danger">
-                            <strong>Q25: Shutdown Rule (Short-Run)</strong>
-                            <p>If Market Price < minimum AVC, the firm should shut down immediately. It loses less money (only its fixed costs) than it would by producing.</p>
-                        </div>
-                        <div class="callout callout-info">
-                            <strong>Q24 & Q26: Long-Run Equilibrium</strong>
-                            <p>Abnormal profits (like in the chart) attract new firms. This increases market supply, which pushes the price down until all firms earn only "normal profit" (where P = ATC).</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+/* --- Content Styling --- */
+.accordion-content h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
 
-        </main>
-    </div>
+.accordion-content h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
 
-</body>
-</html>
+.accordion-content p, 
+.accordion-content ul {
+    margin-bottom: 1rem;
+}
+
+.accordion-content ul {
+    margin-left: 1.5rem;
+}
+
+.accordion-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* NEW: Styles for Description List (CLOs) */
+.accordion-content dl {
+    margin-bottom: 1rem;
+}
+.accordion-content dt {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-top: 0.75rem;
+}
+.accordion-content dd {
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    border-left: 3px solid var(--primary-light);
+    padding-left: 1rem;
+}
+
+
+/* --- Callout Boxes --- */
+.callout {
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+    border-left-width: 5px;
+    border-left-style: solid;
+}
+.callout strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+}
+.callout-info {
+    background-color: var(--info-light);
+    border-color: var(--info-dark);
+    color: var(--info-dark);
+}
+.callout-warning {
+    background-color: var(--warning-light);
+    border-color: var(--warning-dark);
+    color: var(--warning-dark);
+}
+.callout-success {
+    background-color: var(--success-light);
+    border-color: var(--success-dark);
+    color: var(--success-dark);
+}
+.callout-danger {
+    background-color: var(--danger-light);
+    border-color: var(--danger-dark);
+    color: var(--danger-dark);
+}
+
+/* --- Charts --- */
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.chart-caption {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    .main-header h1 {
+        font-size: 2rem;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .accordion-header {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    .accordion-content {
+        padding: 1.5rem;
+    }
+}
