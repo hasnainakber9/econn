@@ -27,76 +27,128 @@
 
             <div class="accordion-item">
                 <button class="accordion-header active">
-                    <span>Course Overview & Synopsis</span>
+                    <span>1. Introduction to Economics and Technology</span>
                     <span class="icon"></span>
                 </button>
                 <div class="accordion-content active">
-                    <h3>Course Synopsis</h3>
-                    <p>This course bridges key concepts of microeconomics with applications in technology, AI, digitization, and computer science. Using real-world case studies, students will explore economic principles and analyze their role in shaping technology-driven decisions and innovation. The course emphasizes practical application and strategic thinking.</p>
-                    <p>The course covers the principles of economics as a theory of rational choice and the operation of a market economy. Students study consumer choice (utility maximization), the behavior of firms (costs and optimal production), and the supply-demand model under perfect competition. The latter part focuses on more realistic market structures (monopolies, oligopolies) and organizational architecture, including principal-agent problems.</p>
+                    <h3>The Role of Scarcity</h3>
+                    <p>Economics is the study of how we make decisions in a world of limited resources (scarcity). Because we can't have everything, we must make choices. In tech, this means a company has scarce resources like engineering hours, server capacity, and capital. They must choose *what* to build.</p>
+
+                    <h3>Opportunity Cost & Trade-offs (PPF)</h3>
+                    <p>The **Opportunity Cost** is the value of the next-best alternative you give up when you make a choice. If you spend 100 engineer hours on AI features, you can't spend those same hours on a new mobile app. The lost mobile app development is the opportunity cost.</p>
+                    <p>This trade-off can be shown with a **Production Possibilities Frontier (PPF)**. It shows the maximum possible combinations of two products a company can produce with its given resources.</p>
+                    <div class="chart-container">
+                        <canvas id="ppfChart"></canvas>
+                    </div>
+                    <ul class="chart-caption">
+                        <li><strong>Point A & B:</strong> Efficient. All resources are fully used.</li>
+                        <li><strong>Point C:</strong> Inefficient. Resources are wasted (e.g., engineers on standby).</li>
+                        <li><strong>Point D:</strong> Unattainable. Not possible with current resources.</li>
+                    </ul>
+
+                    <h4>Scarcity and Innovation</h4>
+                    <p>Innovation (like a new coding framework or AI tool) makes us more productive. It pushes the entire PPF outward, allowing us to produce *more* of both goods with the same resources. This makes "Point D" attainable.</p>
+                    <div class="chart-container">
+                        <canvas id="ppfShiftChart"></canvas>
+                    </div>
                 </div>
             </div>
 
             <div class="accordion-item">
                 <button class="accordion-header">
-                    <span>Course Learning Outcomes (CLOs 1-4)</span>
+                    <span>2. Demand, Supply in the Digital Era</span>
                     <span class="icon"></span>
                 </button>
                 <div class="accordion-content">
-                    <h3>Course Learning Outcomes (CLOs)</h3>
-                    <dl>
-                        <dt>CLO 1</dt>
-                        <dd>Demonstrate comprehension of economic principles and theories relevant to managerial decision-making within various business ecosystems.</dd>
-                        
-                        <dt>CLO 2</dt>
-                        <dd>Apply decision analytics techniques and quantitative methods to analyze economic data sets, enabling strategic decision-making in managerial contexts.</dd>
-                        
-                        <dt>CLO 3</dt>
-                        <dd>Evaluate the impact of global factors on business operations, demonstrating cross-cultural comprehension and adaptability in decision-making.</dd>
-                        
-                        <dt>CLO 4</dt>
-                        <dd>Assess ethical considerations in managerial economics, seeking solutions to ethical challenges and demonstrating social accountability in decision-making processes.</dd>
-                    </dl>
+                    <h3>Demand for Digital Products</h3>
+                    <p>The **Law of Demand** still applies: as the price of a digital product (like a streaming subscription or software) falls, the quantity demanded generally increases.</p>
+                    
+                    <h4>Determinants of Demand (Shifts)</h4>
+                    <p>These factors can change the *entire* demand for a product at every price, shifting the curve.</p>
+                    <ul>
+                        <li><strong>Consumer Preferences:</strong> A product going "viral" or getting a great review shifts demand right.</li>
+                        <li><strong>Prices of Related Goods:</strong> If a competitor (substitute) raises its price, demand for your product shifts right.</li>
+                        <li><strong>Income:</strong> For most "normal" goods, as income rises, demand shifts right.</li>
+                    </ul>
+                    <div class="chart-container">
+                        <canvas id="demandShiftChart"></canvas>
+                    </div>
+                    <p class="chart-caption">A positive review shifts demand from D1 to D2, leading to a higher equilibrium price (P2) and quantity (Q2).</p>
+
+                    <h4>Supply of Digital Products</h4>
+                    <p>This is where digital products are unique. They often have high *fixed costs* (cost to build the first copy) but near-zero *marginal costs* (cost to sell one more copy). This can affect supply dynamics, but the basic model is still used.</p>
+                    <p>The full Supply, Demand, and Equilibrium model is covered in <strong>Section 4</strong>.</p>
                 </div>
             </div>
 
             <div class="accordion-item">
                 <button class="accordion-header">
-                    <span>Key Topics Overview (Sessions 1-4)</span>
+                    <span>3. Case Study: Hurricane Sandy (Price Controls)</span>
                     <span class="icon"></span>
                 </button>
                 <div class="accordion-content">
-                    <h4>Session 1: Introduction to Economics and Technology</h4>
+                    <p>Case studies like Hurricane Sandy are often used to analyze market responses to crises and the effect of government policies.</p>
+                    
+                    <h4>Price Ceilings and Shortages</h4>
+                    <p>During a crisis, the demand for essential goods (like water, generators, gas) skyrockets, shifting demand right. This would normally cause prices to rise sharply (price gouging).</p>
+                    <p>To prevent this, governments often impose a **Price Ceiling**, a legal maximum price. While well-intentioned, this creates a **shortage**: at the low, legal price, consumers demand far more (Q<sub>d</sub>) than suppliers are willing to sell (Q<sub>s</sub>).</p>
+
+                    <div class="chart-container">
+                        <canvas id="priceCeilingChart"></canvas>
+                    </div>
+                    <p class="chart-caption">The market equilibrium price is P*. The government sets a Price Ceiling below it. At this low price, Quantity Demanded (Qd) is much larger than Quantity Supplied (Qs), creating a persistent shortage.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>4. Costs of Businesses and Production</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="accordion-content">
+                    <h4>Implicit vs. Explicit Costs</h4>
+                    <p>To understand a business, we must consider two types of costs:</p>
                     <ul>
-                        <li>Basic economic principles and their relevance to technology.</li>
-                        <li>Opportunity cost and trade-offs in tech development.</li>
-                        <li>The role of scarcity in innovation.</li>
+                        <li><strong>Explicit Costs:</strong> Obvious, out-of-pocket payments. (e.g., employee salaries, rent, materials).</li>
+                        <li><strong>Implicit Costs:</strong> Opportunity costs. What the business owner gives up. (e.g., the $80,000/year salary the owner could be earning at another job).</li>
                     </ul>
 
-                    <h4>Session 2: Demand, Supply in the Digital Era</h4>
+                    <h4>Accounting Profit vs. Economic Profit</h4>
+                    <p>This distinction is critical for decision-making.</p>
                     <ul>
-                        <li>Demand and supply analysis for digital products.</li>
-                        <li>Determinants of Demand and Supply for digital products.</li>
-                        <li>Role of Market Price in dealing with surplus or shortage.</li>
-                        <li>Effect of Government Policies.</li>
+                        <li><strong>Accounting Profit</strong> = Total Revenue - Explicit Costs</li>
+                        <li><strong>Economic Profit</strong> = Total Revenue - (Explicit Costs + Implicit Costs)</li>
                     </ul>
+                    <p>A firm can have a positive Accounting Profit but a negative Economic Profit, meaning the owner would be better off closing the business and taking the other job.</p>
+                    <div class="chart-container">
+                        <canvas id="economicProfitChart"></canvas>
+                    </div>
 
-                    <h4>Session 3: Hurricane Sandy (Case Study)</h4>
-                    <p>This session is a case study discussion, likely applying the concepts from Session 2 to analyze market responses, price controls, and resource allocation during a crisis.</p>
-
-                    <h4>Session 4: Costs of Businesses and Production</h4>
+                    <h4>Total, Fixed, and Variable Costs</h4>
+                    <p>Production costs are broken down into:</p>
                     <ul>
-                        <li>Implicit VS Explicit Cost.</li>
-                        <li>Fixed, Variable, Marginal and Total Costs.</li>
-                        <li>Economies and Diseconomies of Scale.</li>
-                        <li>Marginal Product of Labor & Capital.</li>
+                        <li><strong>Total Fixed Cost (TFC):</strong> Costs that don't change with output (e.g., factory rent).</li>
+                        <li><strong>Total Variable Cost (TVC):</strong> Costs that *do* change with output (e.g., materials, labor).</li>
+                        <li><strong>Total Cost (TC):</strong> TC = TFC + TVC</li>
+                    </ul>
+                    <div class="chart-container">
+                        <canvas id="totalCostChart"></canvas>
+                    </div>
+                    <p class="chart-caption">Note how TFC is a flat line, and the TC curve is just the TVC curve shifted up by the amount of TFC.</p>
+                    
+                    <hr>
+                    <p>The other topics from this session are covered in detail below:</p>
+                    <ul>
+                        <li><strong>Marginal Product:</strong> See <strong>Section 5 (Production Theory)</strong>.</li>
+                        <li><strong>Marginal & Average Costs:</strong> See <strong>Section 6 (Cost Curves)</strong>.</li>
+                        <li><strong>Economies of Scale:</strong> See <strong>Section 7 (Economies of Scale)</strong>.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="accordion-item">
                 <button class="accordion-header">
-                    <span>4. Market Equilibrium & Supply-Demand Analysis</span>
+                    <span>5. Market Equilibrium & Supply-Demand Analysis</span>
                     <span class="icon"></span>
                 </button>
                 <div class="accordion-content">
@@ -130,7 +182,7 @@
 
             <div class="accordion-item">
                 <button class="accordion-header">
-                    <span>5. Production Theory: MP, AP, and Relationships</span>
+                    <span>6. Production Theory: MP, AP, and Relationships</span>
                     <span class="icon"></span>
                 </button>
                 <div class="accordion-content">
@@ -139,7 +191,7 @@
                     <ul>
                         <li><strong>Total Product (TP):</strong> Total output produced.</li>
                         <li><strong>Marginal Product (MP):</strong> The additional output from one more unit of labor. (ΔTP / ΔL)</li>
-                        <li><strong>Average Product (AP):</strong> The output per unit of labor. (TP / L)</li>
+<li><strong>Average Product (AP):</strong> The output per unit of labor. (TP / L)</li>
                     </ul>
 
                     <h4>Marginal and Average Product Curves</h4>
@@ -161,7 +213,7 @@
             
             <div class="accordion-item">
                 <button class="accordion-header">
-                    <span>6. Cost Curves and Their Relationships</span>
+                    <span>7. Cost Curves and Their Relationships</span>
                     <span class="icon"></span>
                 </button>
                 <div class="accordion-content">
@@ -191,7 +243,7 @@
 
             <div class="accordion-item">
                 <button class="accordion-header">
-                    <span>7. Economies and Diseconomies of Scale</span>
+                    <span>8. Economies and Diseconomies of Scale</span>
                     <span class="icon"></span>
                 </button>
                 <div class="accordion-content">
@@ -227,7 +279,7 @@
 
             <div class="accordion-item">
                 <button class="accordion-header">
-                    <span>8. Perfect Competition</span>
+                    <span>9. Perfect Competition</span>
                     <span class="icon"></span>
                 </button>
                 <div class="accordion-content">
