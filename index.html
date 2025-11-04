@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECON 511 | Study Guide</title>
+    <meta name="description" content="A complete study guide for ECON 511: Economic Analysis for Business Decisions.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <header class="main-header">
+            <h1>Economics Study Guide</h1>
+            <p>ECON 511: Economic Analysis for Business Decisions</p>
+        </header>
+
+        <main class="study-guide">
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>1. Market Equilibrium & Supply-Demand Analysis</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Market Equilibrium Concept</h3>
+                    <p><strong>Definition:</strong> Market equilibrium occurs when quantity demanded (Q<sub>d</sub>) equals quantity supplied (Q<sub>s</sub>) at a particular price. At this point (P*, Q*), the market is "cleared."</p>
+                    <div class="callout callout-info">
+                        <strong>Key Formula:</strong> Q<sub>d</sub> = Q<sub>s</sub>
+                    </div>
+                    
+                    <h4>Supply and Demand Graph</h4>
+                    <div class="chart-container">
+                        <canvas id="supplyDemandChart"></canvas>
+                    </div>
+                    <p class="chart-caption">Equilibrium is at the intersection (Price = 30, Quantity = 60).</p>
+
+                    <h4>Shifts in Supply (e.g., Subsidy)</h4>
+                    <div class="chart-container">
+                        <canvas id="supplyShiftChart"></canvas>
+                    </div>
+                    <p class="chart-caption">A government subsidy lowers costs, shifting supply right (S1 to S2), resulting in a lower price and higher quantity.</p>
+
+                    <div class="callout callout-warning">
+                        <strong>Real-World Applications (Pakistan Context):</strong>
+                        <ul>
+                            <li><strong>Q1:</strong> Rising electricity prices → Production costs up → Supply shifts left → Higher prices for goods.</li>
+                            <li><strong>Q2:</strong> Fertilizer subsidies → Production costs down → Supply shifts right → Lower prices for produce.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>2. Production Theory: MP, AP, and Relationships</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Key Production Concepts</h3>
+                    <p>Understanding the relationship between inputs (like labor) and outputs (total product).</p>
+                    <ul>
+                        <li><strong>Total Product (TP):</strong> Total output produced.</li>
+                        <li><strong>Marginal Product (MP):</strong> The additional output from one more unit of labor. (ΔTP / ΔL)</li>
+                        <li><strong>Average Product (AP):</strong> The output per unit of labor. (TP / L)</li>
+                    </ul>
+
+                    <h4>Marginal and Average Product Curves</h4>
+                    <div class="chart-container">
+                        <canvas id="productionChart"></canvas>
+                    </div>
+
+                    <div class="callout callout-success">
+                        <strong>Key Relationships & Rules:</strong>
+                        <ul>
+                            <li><strong>Q5:</strong> When MP > AP, the AP curve is rising.</li>
+                            <li><strong>Q7:</strong> When AP is at its maximum, MP = AP (the curves intersect).</li>
+                            <li>When MP < AP, the AP curve is falling.</li>
+                            <li><strong>Q12:</strong> The "Law of Diminishing Marginal Returns" begins when the MP curve starts to decline (after Labor = 3 in this graph).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>3. Cost Curves and Their Relationships</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Average and Marginal Cost Curves</h3>
+                    <p>These curves show the cost per unit of output. They are a mirror image of the production curves.</p>
+                    <ul>
+                        <li><strong>Marginal Cost (MC):</strong> Cost of producing one more unit. (ΔTC / ΔQ)</li>
+                        <li><strong>Average Variable Cost (AVC):</strong> Variable cost per unit. (TVC / Q)</li>
+                        <li><strong>Average Total Cost (ATC):</strong> Total cost per unit. (TC / Q)</li>
+                        <li><strong>Average Fixed Cost (AFC):</strong> Fixed cost per unit. (TFC / Q)</li>
+                    </ul>
+
+                    <div class="chart-container">
+                        <canvas id="costChart"></canvas>
+                    </div>
+
+                    <div class="callout callout-danger">
+                        <strong>Critical Relationships:</strong>
+                        <ul>
+                            <li><strong>Q6:</strong> MC and MP are inversely related. When MP rises, MC falls. When MP falls (diminishing returns), MC rises.</li>
+                            <li><strong>Q8 & Q13:</strong> When MC is below AVC, it pulls the average down (AVC is falling).</li>
+                            <li><strong>Q14:</strong> The MC curve intersects the AVC and ATC curves at their absolute minimum points.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>4. Economies and Diseconomies of Scale</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Long-Run Average Cost (LRAC) Curve</h3>
+                    <p>In the long run, all costs are variable (e.g., a firm can build a bigger factory). The LRAC curve shows the lowest possible average cost for any given level of output.</p>
+                    
+                    <div class="chart-container">
+                        <canvas id="lracChart"></canvas>
+                    </div>
+
+                    <div class="grid-container">
+                        <div class="callout callout-success">
+                            <strong>Q15: Economies of Scale (LRAC Falling)</strong>
+                            <p>Bigger is cheaper. Doubling inputs more than doubles output.</p>
+                            <ul>
+                                <li>Labor Specialization</li>
+                                <li>Efficient Capital</li>
+                                <li>Bulk Buying</li>
+                            </ul>
+                        </div>
+                        <div class="callout callout-danger">
+                            <strong>Q16: Diseconomies of Scale (LRAC Rising)</strong>
+                            <p>Bigger is more expensive. The firm becomes too large to manage.</p>
+                            <ul>
+                                <li>Control & Coordination Problems</li>
+                                <li>Communication Issues</li>
+                                <li>Bureaucracy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>5. Perfect Competition</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Characteristics</h3>
+                    <p>A "price taker" market model with many firms, identical products, and easy entry/exit.</p>
+                    <ul>
+                        <li><strong>Q27:</strong> The firm's demand curve is perfectly elastic (horizontal) because it must accept the market price. The *industry* demand curve is still downward-sloping.</li>
+                        <li><strong>Q29:</strong> Firms can't advertise; the product is standardized, so there's nothing to differentiate.</li>
+                    </ul>
+
+                    <h4>Profit Maximization (TR/TC Approach)</h4>
+                    <p>Firms maximize profit at the output level where Total Revenue (TR) exceeds Total Cost (TC) by the largest amount.</p>
+                    <div class="chart-container">
+                        <canvas id="profitChart"></canvas>
+                    </div>
+                    <p class="chart-caption">Profit is maximized at Output = 9, where the gap between TR and TC is largest (as shown by the profit bars).</p>
+
+                    <div class="grid-container">
+                        <div class="callout callout-danger">
+                            <strong>Q25: Shutdown Rule (Short-Run)</strong>
+                            <p>If Market Price < minimum AVC, the firm should shut down immediately. It loses less money (only its fixed costs) than it would by producing.</p>
+                        </div>
+                        <div class="callout callout-info">
+                            <strong>Q24 & Q26: Long-Run Equilibrium</strong>
+                            <p>Abnormal profits (like in the chart) attract new firms. This increases market supply, which pushes the price down until all firms earn only "normal profit" (where P = ATC).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
